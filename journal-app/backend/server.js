@@ -10,8 +10,8 @@ app.use(cors());
 app.use(express.json());
 
 // ✅ FIX: Correct route paths
-const authRoutes = require('./auth');
-const entryRoutes = require('./entries');
+const authRoutes = require('./routes/auth');
+const entryRoutes = require('./routes/entries');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/entries', entryRoutes);
