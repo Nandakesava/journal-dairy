@@ -39,7 +39,7 @@ async function handleLogin() {
   if (!email || !password) { errEl.textContent = 'Please fill in all fields.'; return; }
 
   try {
-    const res = await fetch(`${API}/auth/login`, {
+    const res = await fetch(`${API}/api/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
@@ -68,7 +68,7 @@ async function handleRegister() {
   if (password.length < 6) { errEl.textContent = 'Password must be at least 6 characters.'; return; }
 
   try {
-    const res = await fetch(`${API}/auth/register`, {
+    const res = await fetch(`${API}/api/auth/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, email, password })
@@ -129,7 +129,7 @@ async function saveEntry() {
   document.querySelector('.btn-save').disabled = true;
 
   try {
-    const res = await fetch(`${API}/entries`, {
+    const res = await fetch(`${API}/api/entries`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -193,7 +193,7 @@ async function loadEntries() {
   listEl.innerHTML = '<p style="color:var(--text3);font-style:italic;font-size:0.9rem">Loading entries...</p>';
 
   try {
-    const res = await fetch(`${API}/entries`, {
+    const res = await fetch(`${API}/api/entries`, {
       headers: { 'Authorization': `Bearer ${token}` }
     });
     const data = await res.json();
