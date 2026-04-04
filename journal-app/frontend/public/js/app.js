@@ -1,4 +1,4 @@
-const API = 'http://localhost:5000/api';
+const API = 'https://journal-dairy-1.onrender.com';
 let token = localStorage.getItem('journal_token') || '';
 let currentUser = JSON.parse(localStorage.getItem('journal_user') || 'null');
 let scoreChart = null, emotionChart = null, radarChart = null;
