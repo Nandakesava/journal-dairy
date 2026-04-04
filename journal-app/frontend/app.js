@@ -145,8 +145,9 @@ async function loadEntries() {
     console.log(data);
 
   } catch (err) {
-    console.error('Error loading entries');
-  }
+  console.error(err);
+  errEl.textContent = 'Error: ' + err.message;
+}
 }
 
 // -------- DELETE ENTRY --------
