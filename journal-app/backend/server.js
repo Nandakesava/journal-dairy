@@ -26,8 +26,7 @@ app.get('/', (req, res) => {
   res.send('Journal App Backend Running 🚀');
 });
 
-// PORT FIX
-const PORT = process.env.PORT || 10000;
+
 
 // MongoDB connect
 mongoose.connect(process.env.MONGO_URI)
